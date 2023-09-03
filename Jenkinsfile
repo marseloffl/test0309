@@ -25,7 +25,7 @@ pipeline {
     stage('Push') {
      steps{  
          script {
-                sh 'aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 364028079483.dkr.ecr.ap-south-1.amazonaws.com'
+                sh 'aws ecr get-login-password --region ap-south-1 | sudo docker login --username AWS --password-stdin 364028079483.dkr.ecr.ap-south-1.amazonaws.com'
                 sh 'docker tag samplewebapp:latest 364028079483.dkr.ecr.ap-south-1.amazonaws.com/samplewebapp:latest'
                 sh 'docker push 364028079483.dkr.ecr.ap-south-1.amazonaws.com/samplewebapp:latest'
          }
