@@ -15,8 +15,8 @@ pipeline {
     stage('Build') {
       steps{
         script {
-          //dockerImage = docker.build registry
-            sh 'docker build -t samplewebapp .'
+          dockerImage = docker.build registry
+            //sh 'docker build -t samplewebapp .'
         }
       }
     }
