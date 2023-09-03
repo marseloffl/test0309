@@ -5,9 +5,9 @@ pipeline {
     }
 
     stages{
-        stage("Code"){
+        stage("Checkout"){
             steps{
-                git url: "https://github.com/marseloffl/test0309.git", branch: "master"
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/marseloffl/test0309.git']])
             }
         }
     
